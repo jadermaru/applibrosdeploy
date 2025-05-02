@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://applibros-11.onrender.com", 
+    "secure": false
+  }
+}

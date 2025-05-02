@@ -1,0 +1,65 @@
+
+  <button  class="logout-btn" (click)="logout()">Cerrar sesión</button>
+       
+<div class="centered-container">
+  <div *ngIf="book">
+    <mat-card class="form-custom">
+      <mat-card-header>
+        <mat-card-title>{{ book.title }}</mat-card-title>
+        <mat-card-subtitle>por {{ book.author }}</mat-card-subtitle>
+      
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Categoría:</strong> {{ book.category.name }}</p>
+        <p><strong>Resumen:</strong> {{ book.summary }}</p>
+        <p><strong>Detalles:</strong> {{ book.details }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent" routerLink="/inicio">Volver</button>
+        <button mat-raised-button color="primary" (click)="toggleCreateNotaForm()">Dejar Reseña</button>
+
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card *ngIf="showCreateNotaForm">
+      <mat-card-header>
+        <mat-card-title>Crear Nota</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form (ngSubmit)="crearNota()">
+          <div class="form-field">
+            <mat-label>Calificación</mat-label>
+            <mat-select [(ngModel)]="newNota.calificacion" name="calificacion" required>
+              <mat-option *ngFor="let value of [1, 2, 3, 4, 5]" [value]="value">{{ value }}</mat-option>
+            </mat-select>
+          </div>
+          
+          <div class="form-field">
+            <mat-label>Comentario</mat-label>
+            <textarea matInput [(ngModel)]="newNota.comentario" name="comentario" required rows="4" class="comment-input"></textarea>
+          </div>
+
+          <div class="form-field">
+            <button mat-button color="primary" type="submit">Crear Nota</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+    <div *ngIf="notas.length > 0">
+      <div *ngFor="let nota of notas" class="nota-card">
+        <mat-card>
+          <mat-card-content>
+            <p><strong>Comentario:</strong> {{ nota.comentario }}</p>
+            <div class="stars">
+              <span *ngFor="let star of [].constructor(nota.calificacion); let i = index">
+                &#9733;
+              </span>
+            </div>
+            <p class="fecha">{{ nota.fecha | date:'dd/MM/yyyy' }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

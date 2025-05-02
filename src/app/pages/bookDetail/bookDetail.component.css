@@ -1,0 +1,118 @@
+/* Centrado vertical y horizontal */
+.centered-container {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  padding: 20px;
+}
+
+/* Estilo de la card del libro */
+.form-custom {
+  min-width: 300px; /* Asegura que la card tenga un tamaño mínimo */
+  width: 100%;
+}
+
+mat-card-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #3f51b5;
+}
+
+mat-card-subtitle {
+  font-size: 16px;
+  color: #555;
+}
+
+mat-card-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+mat-card-content strong {
+  background-color: #e3f2fd;
+  color: #1565c0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+}
+
+/* Nueva clase para el botón 'Crear Nota' en la parte superior derecha */
+.create-note-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+/* Estilos para el formulario de notas */
+.form-field {
+  margin-bottom: 16px;
+}
+
+/* Estilos para el input de texto de comentario */
+.comment-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical; /* Permite redimensionar el campo de comentario verticalmente */
+}
+
+.comment-input:focus {
+  outline-color: #3f51b5;
+  border-color: #3f51b5;
+}
+
+/* Estilos para las tarjetas de notas */
+.nota-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nota-card {
+  width: 200px;
+  padding: 10px;
+}
+
+.stars {
+  color: gold;
+}
+
+.fecha {
+  font-size: 0.9em;
+  color: gray;
+}
+
+.logout-btn {
+  position: fixed; /* Para que se quede fijo en la esquina */
+  top: 10px;
+  right: 10px;
+  color: red; /* Color rojo para el texto */
+  font-weight: bold; /* Opcional: puedes agregar un poco de negrita si lo deseas */
+  background: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  padding: 8px 12px; /* Un poco de espacio alrededor del texto */
+  cursor: pointer; /* Cambia el cursor a puntero */
+  font-size: 16px; /* Tamaño del texto */
+}
+
+
+.create-note-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
